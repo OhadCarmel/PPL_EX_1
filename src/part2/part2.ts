@@ -42,26 +42,3 @@ export const treeToSentence: (tree: WordTree) => string = (tree: WordTree): stri
     return [tree.root, ...s].join(' ');
 }
 
-const t1: WordTree = {
-    root: "Hello",
-    children: [
-        {
-            root: "students",
-            children: [
-                {
-                    root: "how",
-                    children: []
-                }
-            ]
-        },
-        {
-            root: "are",
-            children: []
-        },
-        {
-            root: "you?",
-            children: []
-        },
-    ]
-}
-console.log(treeToSentence(t1)); // ==> Hello students how are you?
