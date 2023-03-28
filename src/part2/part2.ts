@@ -1,20 +1,17 @@
 import * as R from "ramda";
+import { pipe } from "ramda";
 
-// const stringToArray = (str: string): string[] =>{
-//     return str.split("");
-// }
+const stringToArray = R.split("");
+//"Ohad Carmel Is ThE kinG"
 
 /* Question 1 */
-export const countLetters: (str: string)=> Record<string, number> = (str: string): Record<string, number> =>{
-    const countLetters1: (input: string)=> Record<string, number> = R.pipe(
-        (s: string) => R.trim(s),
-        (s: string) => R.toLower(s),
-        (s: string) => R.split("")(s),
-        (arr: string[]) => R.countBy(R.identity,arr)
-        
-    );//(str) as Record<string, number>;
-    return countLetters1(str);
-} 
+export const countLetters: (s: string) => { [index: string]: number } = (s: string): { [index: string]: number } => {
+    const pipeFunctions: (input: string) => { [index: string]: number } = pipe(
+        R.replace(/\s/g, ''),
+        (str: string) => R.split("")(str),
+        (arr: string[]) => R.countBy(R.toLower)(arr));
+    return pipeFunctions(s);
+}
 
 /* Question 2 */
 
@@ -74,5 +71,9 @@ export type WordTree = {
     children: WordTree[];
 }
 
-export const treeToSentence : undefined = undefined
+export const treeToSentence: (tree: WordTree) => string = (tree: WordTree): string => {
+
+    const s: string[] = tree.children.map((child: WordTree) => treeToSentence(child)).filter(sentence => sentence !== '');
+    return [tree.root, ...s].join(' ');
+}
 
