@@ -23,10 +23,37 @@ const returnSquaredIfFoundEven_v1 = (a: number[]): number => {
     }
 }
 
-export const returnSquaredIfFoundEven_v2 :<T>(arr: number[])=> Result<number> = <T>( arr: number[]): Result<number> => {
+export const returnSquaredIfFoundEven_v2 :(arr: number[])=> Result<number> = ( arr: number[]): Result<number> => {
     const isEven = (x: number) => x % 2 === 0;
     return bind(findResult(isEven, arr), (x: number) => makeOk(x * x));
 }
 
-export const returnSquaredIfFoundEven_v3 : undefined = undefined;
+export const returnSquaredIfFoundEven_v3 : (arr: number[])=> number = (arr: number[]): number => {
+    const isEven = (x: number) => x % 2 === 0;
+    return either(findResult(isEven, arr), (x: number) => x * x, (e: string) => -1);
+}
 
+
+// const data = [1, 2, 3, 4, 5];
+// const data2 = [1, 3, 5];
+// const data3 = [1, -2, 3, -4, 5];
+// const data4 = [1, -2.2, 3, -4.1, 5];
+// console.log("data: ", data);
+// console.log(returnSquaredIfFoundEven_v1(data));
+// console.log(returnSquaredIfFoundEven_v2(data));
+// console.log(returnSquaredIfFoundEven_v3(data));
+
+// console.log("data2: ", data2);
+// console.log(returnSquaredIfFoundEven_v1(data2));
+// console.log(returnSquaredIfFoundEven_v2(data2));
+// console.log(returnSquaredIfFoundEven_v3(data2));
+
+// console.log("data3: ", data3);
+// console.log(returnSquaredIfFoundEven_v1(data3));
+// console.log(returnSquaredIfFoundEven_v2(data3));
+// console.log(returnSquaredIfFoundEven_v3(data3));
+
+// console.log("data4: ", data4);
+// console.log(returnSquaredIfFoundEven_v1(data4));
+// console.log(returnSquaredIfFoundEven_v2(data4));
+// console.log(returnSquaredIfFoundEven_v3(data4));
