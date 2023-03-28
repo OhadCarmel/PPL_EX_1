@@ -1,2 +1,5 @@
-print(2)
-print(1)
+def print_num(num):
+    print(num)
+    num += 1
+    if num < 10:
+        print_num(num)
