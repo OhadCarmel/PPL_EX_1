@@ -40,9 +40,6 @@ export const isPaired: (s: string) => boolean = pipe(
     )
 
    
-
-        
-
 // Question 3 *
 export type WordTree = {
     root: string;
@@ -55,7 +52,7 @@ export const treeToSentence: (tree: WordTree) => string = (tree: WordTree): stri
     return [tree.root, ...s].join(' ');
 }
 
-console.log(isPaired("This is ([some]) {text}"));
+
 
 
 
