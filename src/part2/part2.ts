@@ -51,8 +51,3 @@ export const treeToSentence: (tree: WordTree) => string = (tree: WordTree): stri
     const s: string[] = tree.children.map((child: WordTree) => treeToSentence(child)).filter(sentence => sentence !== '');
     return [tree.root, ...s].join(' ');
 }
-
-
-
-
-
