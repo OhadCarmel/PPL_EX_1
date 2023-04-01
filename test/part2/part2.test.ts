@@ -15,7 +15,19 @@ describe("Assignment 1 Part 2", () => {
             expect(countLetters("I am robot")).toEqual({"i": 1, "a": 1, "m": 1, "r":1, "o":2, "b":1, "t":1});
         });
         it("counts letters", () => {
-            expect(countLetters("abcABCaabbcc d")).toEqual({"a": 4, "b":4, "c": 4, "d": 1});
+            expect(countLetters("abcdefg")).toEqual({"a": 1, "b":1, "c": 1, "d": 1, "e":1, "f":1, "g":1});
+        });
+        it("counts letters", () => {
+            expect(countLetters("ancASnsdjAsdfas")).toEqual({"a": 4, "n":2, "c": 1, "s":4, "d":2, "j":1, "f":1});
+        });
+        it("counts letters", () => {
+            expect(countLetters("PJADSSdfijerPJVXZnwfjiMWOjf")).toEqual({"p": 2, "j": 5, "a": 1, "d": 2, "s": 2, "f": 3, "i": 2, "e": 1, "r": 1, "v": 1, "x": 1, "z": 1, "n": 1, "w": 2, "m": 1, "o": 1});
+        });
+        it("counts letters", () => {
+            expect(countLetters("mxnMCXVInsbhxMWMmsMWEP")).toEqual({"m": 6, "x": 3, "h": 1, "n": 2, "c": 1, "v": 1, "i": 1, "s": 2, "b": 1, "w": 2, "e": 1, "p": 1});
+        });
+        it("counts letters", () => {
+            expect(countLetters("nnsNNsjnsdfNNiifwydNNXIEWHn")).toEqual({"n": 10, "s": 3, "j": 1, "d": 2, "f": 2, "i": 3, "w": 2, "y": 1, "x": 1, "e": 1, "h": 1});
         });
     });
 
