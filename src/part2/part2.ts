@@ -63,13 +63,6 @@ function sumEven(numbersAsString: string[]): number {
     return sum;
 }
 
-export const sumEv :(numberAsString: string[])=> number = (numberAsString: string[]): number => {
-
-    //const s = R.filter((num: string) => parseInt(num, 10) % 2 == 0, numberAsString) // s is string[]
-    const sum = R.reduce((acc: number, curr: string) => parseInt(curr, 10) % 2 == 0 ? acc + parseInt(curr, 10): acc , 0, numberAsString) // sum is number
-    return sum;
-}
-
-console.log(sumEv(["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]));
-
-(x: any[], y: (value: any) => boolean) : boolean => x.some(y);
+export const sumEv :(numberAsString: string[])=> number = (numberAsString: string[]): number => 
+    R.reduce((acc: number, curr: string) => parseInt(curr, 10) % 2 == 0 ? acc + parseInt(curr, 10): acc , 0, numberAsString) // sum is number
+    
